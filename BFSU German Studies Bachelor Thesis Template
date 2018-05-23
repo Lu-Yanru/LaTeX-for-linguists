@@ -27,6 +27,7 @@
 \titleformat{\chapter}{\Huge\bfseries}{\thechapter\ }{1em}{}
 \renewcommand\contentsname{Inhaltsverzeichnis}
 \renewcommand\chaptername{Teil}
+
 \usepackage[hang,flushmargin]{footmisc}  %用于脚注取消首行缩进
 
 
@@ -36,8 +37,7 @@
 
 %封面没有太做好
 \title{}
-\author{vorgelegt von\\LU Yanru
-	\and betreut von\\Asso. Prof. Dr. LI Jing}
+\author{}
 \date{}                                           % Activate to display a given date or no date
 
 \begin{document}
