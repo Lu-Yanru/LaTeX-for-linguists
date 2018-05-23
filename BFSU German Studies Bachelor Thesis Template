@@ -1,0 +1,51 @@
+%use XeLaTeX for Chineses and special letters in German
+
+\documentclass[12pt, openany, oneside]{book}
+\usepackage{xeCJK}
+\usepackage[left=3.17cm, right=3.17cm, top=2.54cm, bottom=2.54cm]{geometry} 
+\geometry{a4paper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{gb4e}
+
+
+\usepackage{fontspec,xltxtra,xunicode}
+\defaultfontfeatures{Mapping=tex-text}
+\setromanfont[Mapping=tex-text]{Times New Roman}
+%\setsansfont[Scale=MatchLowercase,Mapping=tex-text]{Gill Sans}
+%\setmonofont[Scale=MatchLowercase]{Andale Mono}
+\linespread{1.5}
+\addtolength{\footnotesep}{2mm}
+\interfootnotelinepenalty=10000 %脚注不会分页显示
+\addtolength{\skip\footins}{5pt}
+
+\usepackage[colorlinks, linkcolor=blue]{hyperref}
+
+\usepackage{titlesec}
+\titleformat{\chapter}{\Huge\bfseries}{\thechapter\ }{1em}{}
+\renewcommand\contentsname{Inhaltsverzeichnis}
+\renewcommand\chaptername{Teil}
+\usepackage[hang,flushmargin]{footmisc}  %用于脚注取消首行缩进
+
+
+\usepackage{chngcntr} %用于脚注和例句全篇连续编号
+\counterwithout{footnote}{chapter}
+\counterwithout{exx}{chapter}
+
+%封面没有太做好
+\title{}
+\author{vorgelegt von\\LU Yanru
+	\and betreut von\\Asso. Prof. Dr. LI Jing}
+\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+
+\frontmatter
+
+\mainmatter
+
+\backmatter
+
+\end{document}
