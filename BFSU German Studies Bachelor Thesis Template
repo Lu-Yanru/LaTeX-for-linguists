@@ -1,0 +1,144 @@
+%use XeLaTeX for Chinese and special letters in German
+
+\documentclass[12pt, openany, oneside]{book}  %打印时去掉openany, oneside
+
+\setcounter{secnumdepth}{4} %目录显示四级标题
+\setcounter{tocdepth}{4}
+
+\usepackage{xeCJK}
+\usepackage[left=3cm, right=2.5cm, top=2.5cm, bottom=2.5cm]{geometry} 
+\geometry{a4paper} 
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\renewcommand\figurename{Abb.}
+\renewcommand\tablename{Tab.}
+\usepackage{float}
+
+\usepackage{caption}
+\captionsetup{font=small}
+
+\usepackage{amssymb}
+
+\usepackage{gb4e}
+
+\usepackage{fontspec,xltxtra,xunicode}
+\defaultfontfeatures{Mapping=tex-text}
+\setromanfont[Mapping=tex-text]{Times New Roman}
+\setromanfont[Scale=MatchLowercase,Mapping=tex-text]{Times New Roman}
+\setromanfont[Scale=MatchLowercase]{Times New Roman}
+
+\linespread{1.4}
+\setlength{\parskip}{0.5\baselineskip}
+\addtolength{\footnotesep}{1.5mm}
+\interfootnotelinepenalty=10000
+\addtolength{\skip\footins}{5pt}
+
+\usepackage[colorlinks, linkcolor=blue]{hyperref}   %打印时记得改为black
+
+\usepackage{titlesec}  %调整标题样式
+\titleformat{\chapter}{\Huge\bfseries}{\thechapter\ }{1em}{}
+\renewcommand\contentsname{Inhaltsverzeichnis}
+\renewcommand\chaptername{Teil}
+
+\usepackage[hang,flushmargin]{footmisc} %脚注左缩进
+
+\usepackage{chngcntr}  %脚注和例句编号在新章节不重启
+\counterwithout{footnote}{chapter}
+\counterwithout{exx}{chapter}
+
+
+%封面没有太做好
+\title{}
+\author{}
+\date{}                     % Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+
+\frontmatter
+\chapter{vorwort}
+
+\tableofcontents
+
+\chapter{摘要}
+\chapter{Abstract}
+
+\mainmatter
+\chapter{Einleitung}
+
+%例句
+\emph{
+\begin{exe}
+\ex \begin{xlist}
+	\ex 
+	\ex 
+	\ex \begin{xlisti}
+		\ex 
+		\ex 
+		\end{xlisti}
+	\end{xlist}
+\end{exe}}
+
+%双语例句
+\emph{
+\begin{exe}
+\ex
+ \gll
+  {john}  {Jägna} {nä-n n} {yt-lall}\footnotemark\\
+  {John} {Held} {ich-bin} {sagt-3 SG.M}\\
+  \glt 'John_i sagt, dass ich_i ein Held bin.`\label{6}
+\end{exe}}
+\footnotetext{Schlenker, 1999, S. 21.}  %这里用于在例句中加脚注
+
+%图表
+\begin{table}[h]
+\centering
+\includegraphics[width=1\textwidth]{图片名}\caption{xxx}
+\end{table}
+\footnotetext{xxx}
+%上面一行用于给标签加脚注
+
+%图表并排
+\begin{figure}[htbp]
+  \centering
+  \begin{minipage}[b]{0.45\textwidth}
+    \centering
+    \includegraphics[width=0.9\textwidth]{图片名}
+    \caption{xxx}
+  \end{minipage}
+  %\qquad
+  \begin{minipage}[b]{0.45\textwidth}
+    \centering
+    \includegraphics[width=0.9\textwidth]{图片名}
+    \caption{xxx}
+  \end{minipage}
+\end{figure}
+
+\backmatter
+\chapter{Literaturverzeichnis}
+\hangafter 1\hangindent 1.5em\noindent %悬挂缩进暂时没想到更好的办法，只好在每条前面都加这个
+
+\chapter{Eidesstatliche Versicherung}
+\section*{Versicherung}
+Ich versichere an Eides Statt durch meine eigene Unterschrift, dass ich die vorliegende Arbeit selbständig und ohne fremde Hilfe angefertigt und alle Stellen, die wörtlich oder annähernd wörtlich aus Veröffentlichungen entnommen sind, als solche kenntlich gemacht und mich auch keiner anderen als der angegebenen Literatur bedient habe. Diese Versicherung bezieht sich auch auf in der Arbeit gelieferte Zeichnungen, Skizzen, bildliche Darstellungen und dergleichen.
+\vspace{1.5cm}
+
+\section*{诚信声明}
+我以我的签名保证: 此论文是我独立写成。除了所表明的参考文献外未使用其他材料。论文中直接或间接引用（包括图表）均已注明出处。
+
+\vspace{1cm}
+\begin{figure}[h]
+\raggedleft
+\includegraphics[width=3cm]{签名}
+\end{figure}
+\begin{flushright}
+\dots\dots\dots\dots\dots\dots\dots\dots\dots\\
+(Unterschrift)\\
+(签名)\\
+\today
+\end{flushright}
+
+\chapter{文献综述}
+
+\end{document}
