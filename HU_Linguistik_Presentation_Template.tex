@@ -1,0 +1,274 @@
+\documentclass{beamer}
+
+%\usepackage{pgfpages}
+%\mode<handout>{%
+   % \pgfpagesuselayout{6 on 1}[a4paper] 
+  %  \setbeameroption{show notes}
+%}
+
+% \usepackage{beamerthemesplit} %// Activate for custom appearance
+\usetheme[compress]{Berlin}
+\usecolortheme{dolphin}
+
+\usepackage{etoolbox}
+
+\usepackage{xeCJK}
+\usepackage{xpinyin}
+\xpinyinsetup{pysep = {}}
+
+%suppress subsection line
+\setbeamertemplate{headline}
+{%
+  \begin{beamercolorbox}[colsep=1.5pt]{upper separation line head}
+  \end{beamercolorbox}
+  \begin{beamercolorbox}{section in head/foot}
+    \vskip2pt\insertnavigation{\paperwidth}\vskip2pt
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[colsep=1.5pt]{lower separation line head}
+  \end{beamercolorbox}
+}
+
+%footer
+\makeatother
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.3\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.4\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle
+  \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.3\paperwidth,ht=2.25ex,dp=1ex,center]{date in head/foot}%
+    \usebeamerfont{date in head/foot}\insertshortdate\hspace*{3em}
+    \insertframenumber{} / \inserttotalframenumber\hspace*{1ex}
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+\makeatletter
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}[numbered]
+
+\usepackage{xcolor}
+\usepackage{url}
+\usepackage{multicol}
+\usepackage{hyperref}
+\usepackage{ulem}
+\normalem
+
+\usepackage{graphicx}
+\renewcommand\figurename{Abb.}
+\renewcommand\tablename{Tab.}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{multirow}
+% contents in tabular centers vertically
+\usepackage{array}
+% force line break in tabular cell
+\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
+
+
+%\usepackage{linguex}
+\usepackage{gb4e}
+\usepackage{cgloss4e}
+% add space btw. lines
+\noautomath
+\setlength{\glossglue}{5pt plus 2pt minus 1pt}
+\renewcommand{\eachwordthree}{\rule[-10pt]{0pt}{0pt}}
+\let\eachwordone=\sffamily %or \normalfont
+\let\eachwordtwo=\sffamily
+
+\renewcommand{\@subex}[2]{\settowidth{\labelwidth}{#1}\itemindent\z@\labelsep#2%
+         \ifnum\the\@xnumdepth=1%
+           \topsep 7\p@ plus2\p@ minus3\p@\itemsep3\p@ plus2\p@\else%
+           \topsep1.5\p@ plus\p@\itemsep1.5\p@ plus\p@%
+           \parsep\p@ plus.5\p@ minus.5\p@%
+           \advance\leftmargin#2\relax\fi}
+
+\usepackage{ amssymb }
+
+
+\title[short title]{Title}
+\subtitle{Subtitle}
+\author{author}
+\institute{
+	Email}
+
+% logo
+%\pgfdeclareimage[height=0.7cm]{480px-Huberlin-logo.pdf}
+%\logo{
+	%\vspace*{-0.25cm}
+%	\includegraphics[width=2cm]{480px-Huberlin-logo.png}
+	%\hspace*{-0.05cm}}
+% default position	
+%\titlegraphic{\includegraphics[width=2cm]{480px-Huberlin-logo.png}}
+% specify position
+\titlegraphic{%
+  \begin{picture}(0,0)
+    \put(160,5){\makebox(0,0)[rt]{\includegraphics[width=2cm]{uni-logo.png}}}
+  \end{picture}}
+
+
+%adjust font size to frame
+%\usepackage{xpatch}
+
+%\makeatletter
+%\patchcmd\beamer@@tmpl@frametitle{\insertframetitle}{\insertsection\space-- \insertframetitle}{}{}
+%\makeatother
+
+%display short title
+%\usepackage{etoolbox}
+%\makeatletter
+% Insert [short title] for \section in ToC
+%\patchcmd{\beamer@section}{{#2}{\the\c@page}}{{#1}{\the\c@page}}{}{}
+% Insert [short title] for \section in Navigation
+%\patchcmd{\beamer@section}{{\the\c@section}{\secname}}{{\the\c@section}{#1}}{}{}
+% Insert [short title] for \subsection in ToC
+%\patchcmd{\beamer@subsection}{{#2}{\the\c@page}}{{#1}{\the\c@page}}{}{}
+% Insert [short title] for \subsection  in Navigation
+%\patchcmd{\beamer@subsection}{{\the\c@subsection}{#2}}{{\the\c@subsection}{#1}}{}{}
+%\makeatother
+
+
+\date{date}
+
+\begin{document}
+
+\frame{\titlepage
+	\scriptsize{
+	Modul\\
+	SE\\
+	Dozent\\
+	Sprach- und literaturwissenschaftliche Fakultät\\
+	Humboldt-Universität zu Berlin}}
+
+
+
+\section{Einleitung}
+\subsection{Motivation}
+\frame
+{
+  \frametitle{Motivation}
+
+  \begin{itemize}
+  \item<1-> 
+  \item<1-> 
+  \end{itemize}
+}
+
+\subsection{Fragestellung}
+\frame
+{
+  \frametitle{Fragestellung}
+
+  \begin{itemize}
+  \item<1-> Frage?     
+  \end{itemize}
+}
+
+\subsection*{Gliederung}
+\frame{
+\frametitle{Gliederung}
+\begin{multicols}{2}
+\tableofcontents%[hideallsubsections]
+\end{multicols}
+}
+
+\section{Wortstellung kontrastiv}
+\frame
+{
+  \frametitle{Wortstellung des Deutschen, Englischen und Chinesischen kontrastiv}
+\tableofcontents[currentsection, hideothersubsections]
+
+}
+
+\subsection{SVO}
+\frame
+{
+  \frametitle{SVO im einfachen deklarativen Satz}
+\begin{tabular}{| >{\raggedright\arraybackslash}m{0.15\linewidth} | >{\raggedright\arraybackslash}m{0.75\linewidth} |}
+\hline
+\tabincell{l}{Deutsch\\
+\tiny{(Hoberg \&}\\\tiny{Hoberg, 2011)}}
+& 
+\begin{exe}
+\ex \uline{Ich} {\color{blue}esse} \uuline{einen Apfel}.
+\end{exe}
+
+\\
+\hline
+\tabincell{l}{Englisch\\
+\tiny{(Aarts, 2011)}}
+&
+\begin{exe}
+\ex \uline{I} {\color{blue}eat} \uuline{an apple}.
+\end{exe}
+
+\\ \hline
+\tabincell{l}{Chinesisch\\
+\tiny{(Yip \&}\\\tiny{Rimmington, 2004)}}
+&
+\begin{exe}
+\ex \gll \uline{\pinyin{wo3}} {\color{blue}\pinyin{chi1}} \uuline{\pinyin{ping2guo3}}.\\
+	Ich ess- Apfel.\\
+\end{exe}\\
+\hline
+\end{tabular}
+}
+
+\section{Empirische Analyse}
+\frame
+{
+  \frametitle{Empirische Analyse}
+\tableofcontents[currentsection, hideothersubsections]
+
+}
+
+
+\subsection{Transfer vom Chinesischen/Englischen}
+\frame
+{
+  \frametitle{Transfer vom Chinesischen/Englischen}
+\begin{itemize}
+\item Kontaktstellung
+\begin{exe}
+\ex 
+\glll 
+ * \uline{Ich} {{\color{blue}muß}} {{\color{blue}fahren}} {in die Stadt.\footnote{Wei, 2006, p.100}}\\
+ {} \uline{I} {{\color{blue}must}} {{\color{blue}go} (by car/bus)} {to the city.}\\
+ {} \uline{\pinyin{wo3}} {{\color{blue}\pinyin{bi4xu1}}} {\pinyin{(zuo4 che1)} {\color{blue}\pinyin{qu4}}} \pinyin{cheng2li3.}\\
+	
+\end{exe}
+\end{itemize}
+}
+
+
+\section{Diskussion}
+\frame
+{
+  \frametitle{Diskussion}
+  
+  \begin{itemize}
+  \item<1-> 
+  \item<2-> 
+   \end{itemize}
+}
+
+\begingroup
+\scriptsize
+\section{Literaturverzeichnis}
+\frame
+{
+\begin{itemize}
+\item 
+
+
+\end{itemize}
+}
+
+
+\endgroup
+
+
+\end{document}
